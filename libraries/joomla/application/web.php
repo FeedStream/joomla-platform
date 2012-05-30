@@ -641,7 +641,13 @@ class JApplicationWeb extends JApplicationBase
 		// Sanitize the input values.
 		$name = (string) $name;
 		$value = (string) $value;
-
+		
+		//update mimeType var
+		if (strtolower($name) == "content-type")
+		{
+			$this->mimeType = $value;
+		}
+		
 		// If the replace flag is set, unset all known headers with the given name.
 		if ($replace)
 		{
